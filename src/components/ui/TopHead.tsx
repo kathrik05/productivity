@@ -23,7 +23,7 @@ export const TopHead: React.FC<TopHeadProps> = ({
   return (
     <header
       className={cn(
-        'bg-primary flex gap-1 h-26 items-center overflow-clip p-5 relative rounded-bl-lg rounded-br-lg shrink-0 w-full',
+        'bg-primary sticky top-0 z-30 flex gap-1 h-26 items-center overflow-clip p-5 rounded-bl-lg rounded-br-lg shrink-0 w-full',
         className
       )}
       data-node-id="93:8279"
