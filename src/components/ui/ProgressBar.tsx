@@ -28,7 +28,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 items-start relative w-[350px]',
+        'flex flex-col gap-2 items-start relative w-full max-w-87.5',
         className
       )}
       role="progressbar"
@@ -36,7 +36,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       aria-valuemin={0}
       aria-valuemax={100}
     >
-      <div className="flex items-start justify-between relative shrink-0 w-[350px]">
+      <div className="flex items-start justify-between relative shrink-0 w-full">
         <div
           className={cn(
             'flex flex-col justify-center relative shrink-0 text-secondary w-[127.881px]',
@@ -48,7 +48,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           <p className="leading-[normal]">{`${percentage}% `}</p>
         </div>
         <div className="bg-accent-badge flex items-center justify-center px-3 py-1 relative shrink-0">
-          <div className="flex flex-col font-sans text-caption font-medium justify-center relative shrink-0 text-secondary text-center w-[138.2px]">
+          <div className="flex flex-col font-sans text-caption font-medium justify-center relative shrink-0 text-secondary text-center min-w-[138.2px]">
             <p className="leading-[normal]">{deltaText}</p>
           </div>
         </div>
@@ -56,7 +56,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 
       <div
         className={cn(
-          'flex items-center justify-between relative shrink-0 w-[350px]',
+          'flex items-center justify-between relative shrink-0 w-full',
           isStacked ? 'h-5 overflow-clip' : 'h-[50px]'
         )}
       >
