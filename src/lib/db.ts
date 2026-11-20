@@ -43,3 +43,33 @@ export class ProductivityDatabase extends Dexie {
 }
 
 export const db = new ProductivityDatabase();
+
+const DB_RESET_EPOCH = 'reset_2026_11_20_v1';
+const DB_RESET_KEY = 'productivity_db_reset_epoch';
+
+export async function clearDatabase(): Promise<void> {
+  await db.transaction('rw', db.lists, db.tasks, async () => {
+    await db.tasks.clear();
+    await db.lists.clear();
+  });
+}
+
+// Automatically clear existing IndexedDB data once for this reset epoch
+if (typeof window !== 'undefined') {
+  const params = new URLSearchParams(window.location.search);
+  const shouldForceReset = params.get('reset') === '1';
+  const currentEpoch = window.localStorage.getItem(DB_RESET_KEY);
+
+  if (shouldForceReset || currentEpoch !== DB_RESET_EPOCH) {
+    clearDatabase()
+      .then(() => {
+        window.localStorage.setItem(DB_RESET_KEY, DB_RESET_EPOCH);
+        if (shouldForceReset) {
+          window.history.replaceState({}, '', window.location.pathname);
+        }
+      })
+      .catch(() => {
+        // Ignore if IndexedDB is blocked
+      });
+  }
+}
