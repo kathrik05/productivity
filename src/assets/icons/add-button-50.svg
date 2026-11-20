@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Addbutton" clip-path="url(#clip0_0_4)">
+<path id="Vector" d="M50 0H0V50H50V0Z" fill="#F3562B"/>
+<path id="Vector_2" d="M28.5 9.9541H21.5V39.9541H28.5V9.9541Z" fill="white"/>
+<path id="Vector_3" d="M40 21.4541H10V28.4541H40V21.4541Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_0_4">
+<rect width="50" height="50" fill="white"/>
+</clipPath>
+</defs>
+</svg>
