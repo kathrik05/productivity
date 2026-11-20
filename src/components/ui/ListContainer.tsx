@@ -17,7 +17,7 @@ export const ListContainer: React.FC<ListContainerProps> = ({
   return (
     <section
       className={cn(
-        'bg-primary min-h-167.25 flex-1 overflow-clip relative rounded-tl-lg rounded-tr-lg shrink-0 w-full max-w-97.5',
+        'bg-primary flex-1 min-h-0 w-full overflow-y-auto overflow-x-hidden relative rounded-tl-lg rounded-tr-lg',
         className
       )}
       data-node-id="93:8285"

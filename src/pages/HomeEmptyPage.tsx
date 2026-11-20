@@ -23,23 +23,21 @@ export const HomeEmptyPage: React.FC<HomeEmptyPageProps> = ({
   };
 
   return (
-    <main className="min-h-screen bg-secondary flex justify-center items-start">
-      <div
-        className="bg-secondary flex flex-col gap-3 items-start relative w-full max-w-97.5 min-h-196.25"
-        data-node-id="93:8303"
-        data-name="create List"
-      >
-        <TopHead dateText="25 Jan 2026" greetingText="Good Morning, User" />
+    <main
+      className="bg-secondary flex flex-col gap-3 h-screen h-[100dvh] w-full overflow-hidden"
+      data-node-id="93:8303"
+      data-name="create List"
+    >
+      <TopHead dateText="25 Jan 2026" greetingText="Good Morning, User" />
 
-        <ListContainer>
-          <EmptyListState
-            title="create"
-            description="use +  to create a list and add tasks"
-            onAddClick={handleAddClick}
-            className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 top-1/2 max-w-[calc(100%-40px)]"
-          />
-        </ListContainer>
-      </div>
+      <ListContainer className="flex flex-col items-center justify-center">
+        <EmptyListState
+          title="create"
+          description="use +  to create a list and add tasks"
+          onAddClick={handleAddClick}
+          className="w-full max-w-87.5 px-5"
+        />
+      </ListContainer>
     </main>
   );
 };
