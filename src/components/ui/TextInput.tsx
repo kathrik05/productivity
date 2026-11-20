@@ -41,29 +41,26 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       visualState ??
       (isFocused ? 'active' : currentValue.length > 0 ? 'typed' : 'default');
 
-    // In Figma node 93:8544, dark/default has a 20x20 leading spacer with 10px gap
-    const showLeadingSpacer =
-      leadingSpacer !== undefined
-        ? leadingSpacer
-        : theme === 'dark' && effectiveState === 'default' && !leadingIcon;
+    const showLeadingSpacer = Boolean(leadingSpacer);
 
     const isDark = theme === 'dark';
+    const isActive = effectiveState === 'active';
     const isActiveOrTyped =
       effectiveState === 'active' || effectiveState === 'typed';
 
     return (
       <div
         className={cn(
-          'border-b-1.5 border-solid flex items-center overflow-clip p-0.5 relative w-[278px] transition-colors',
+          'border-b-1.5 border-solid flex h-[44.419px] items-center overflow-clip px-1 py-3 relative w-[276px] transition-colors',
           isDark
             ? hasError
               ? 'bg-secondary border-accent'
-              : isActiveOrTyped
+              : isActive
                 ? 'bg-secondary border-primary'
                 : 'bg-secondary border-secondary-light'
             : hasError
               ? 'bg-primary border-accent'
-              : isActiveOrTyped
+              : isActive
                 ? 'bg-primary border-secondary'
                 : 'bg-primary border-secondary-light',
           (showLeadingSpacer || leadingIcon) && 'gap-2.5',

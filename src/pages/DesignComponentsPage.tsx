@@ -128,33 +128,33 @@ export const DesignComponentsPage: React.FC = () => {
 
       {/* 4. listname Input Set (93:8544) */}
       <div
-        className="absolute left-[1233.5px] top-[314.77px] w-[318px] h-[286.52px]"
+        className="absolute left-[1302px] top-[293px] w-[318px] h-[348.52px]"
         data-node-id="93:8544"
         data-name="listname"
       >
-        <div className="absolute left-[20px] top-[20px]">
+        <div className="absolute left-[21px] top-[21px]">
           <TextInput theme="dark" visualState="default" placeholder="list name" />
         </div>
-        <div className="absolute left-[20px] top-[64.42px]">
+        <div className="absolute left-[21px] top-[73.42px]">
           <TextInput theme="dark" visualState="active" defaultValue="|" />
         </div>
-        <div className="absolute left-[20px] top-[108.84px]">
+        <div className="absolute left-[21px] top-[125.84px]">
           <TextInput theme="dark" visualState="typed" defaultValue="John Doe" />
         </div>
-        <div className="absolute left-[20px] top-[153.26px]">
+        <div className="absolute left-[21px] top-[178.26px]">
           <TextInput theme="light" visualState="default" placeholder="list name" />
         </div>
-        <div className="absolute left-[20px] top-[197.68px]">
+        <div className="absolute left-[21px] top-[230.68px]">
           <TextInput theme="light" visualState="active" defaultValue="|" />
         </div>
-        <div className="absolute left-[20px] top-[242.1px]">
+        <div className="absolute left-[21px] top-[283.1px]">
           <TextInput theme="light" visualState="typed" defaultValue="typed" />
         </div>
       </div>
 
       {/* 5. Primary Save Button Set (94:8555) */}
       <div
-        className="absolute left-[1249px] top-[624.28px] w-[192px] h-[144px]"
+        className="absolute left-[1246px] top-[669px] w-[192px] h-[144px]"
         data-node-id="94:8555"
         data-name="Save Primary"
       >
@@ -172,7 +172,7 @@ export const DesignComponentsPage: React.FC = () => {
 
       {/* 6. Secondary Save Button Set (94:8560) */}
       <div
-        className="absolute left-[1471px] top-[624.28px] w-[198px] h-[144px]"
+        className="absolute left-[1468px] top-[669px] w-[198px] h-[144px]"
         data-node-id="94:8560"
         data-name="Save Secondary"
       >
@@ -190,7 +190,7 @@ export const DesignComponentsPage: React.FC = () => {
 
       {/* 7. Pop-up Component (94:8586) */}
       <div
-        className="absolute left-[1249px] top-[813.04px]"
+        className="absolute left-[1246px] top-[840px]"
         data-node-id="94:8586"
         data-name="pop-up"
       >
@@ -254,17 +254,17 @@ export const DesignComponentsPage: React.FC = () => {
 
       {/* 11. Frame 39 Task Details Set (99:9853) */}
       <div
-        className="absolute left-[2453px] top-[121.03px] w-[390px] h-[1068.26px]"
+        className="absolute left-[2453px] top-[121.03px] w-[390px] h-[1108.26px]"
         data-node-id="99:9853"
         data-name="Frame 39"
       >
         <div className="absolute left-[21px] top-[21px]">
           <TaskDetailsPanel mode="no_due" />
         </div>
-        <div className="absolute left-[21px] top-[315.42px]">
+        <div className="absolute left-[21px] top-[335.42px]">
           <TaskDetailsPanel mode="due" />
         </div>
-        <div className="absolute left-[21px] top-[663.84px]">
+        <div className="absolute left-[21px] top-[703.84px]">
           <TaskDetailsPanel mode="scheduled" />
         </div>
       </div>

@@ -221,11 +221,10 @@ export const TaskDetailsPanel: React.FC<TaskDetailsPanelProps> = ({
           <TextInput
             theme="dark"
             placeholder={activeMode === 'due' ? 'list name' : 'Notes'}
-            leadingSpacer={activeMode !== 'scheduled'}
             value={notesValue}
             onChange={(e) => setNotesValue(e.target.value)}
             containerClassName={
-              activeMode === 'scheduled' ? 'w-full' : 'w-[278px]'
+              activeMode === 'scheduled' ? 'w-full h-auto p-0.5' : 'w-[276px]'
             }
           />
         </div>
