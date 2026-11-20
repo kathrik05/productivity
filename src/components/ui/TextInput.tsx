@@ -7,6 +7,7 @@ export interface TextInputProps
   visualState?: 'default' | 'active' | 'typed';
   leadingSpacer?: boolean;
   leadingIcon?: React.ReactNode;
+  hasError?: boolean;
   containerClassName?: string;
 }
 
@@ -17,6 +18,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       visualState,
       leadingSpacer,
       leadingIcon,
+      hasError = false,
       containerClassName,
       className,
       placeholder = 'list name',
@@ -52,14 +54,18 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     return (
       <div
         className={cn(
-          'border-b-1.5 border-solid flex items-center overflow-clip p-0.5 relative w-[278px]',
+          'border-b-1.5 border-solid flex items-center overflow-clip p-0.5 relative w-[278px] transition-colors',
           isDark
-            ? isActiveOrTyped
-              ? 'bg-secondary border-primary'
-              : 'bg-secondary border-secondary-light'
-            : isActiveOrTyped
-              ? 'bg-primary border-secondary'
-              : 'bg-primary border-secondary-light',
+            ? hasError
+              ? 'bg-secondary border-accent'
+              : isActiveOrTyped
+                ? 'bg-secondary border-primary'
+                : 'bg-secondary border-secondary-light'
+            : hasError
+              ? 'bg-primary border-accent'
+              : isActiveOrTyped
+                ? 'bg-primary border-secondary'
+                : 'bg-primary border-secondary-light',
           (showLeadingSpacer || leadingIcon) && 'gap-2.5',
           containerClassName
         )}
@@ -74,12 +80,19 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         )}
         <input
           ref={ref}
+          aria-invalid={hasError || undefined}
           value={
             visualState === 'active' && currentValue === ''
               ? '|'
               : currentValue
           }
-          placeholder={effectiveState === 'active' ? '|' : placeholder}
+          placeholder={
+            visualState === 'active'
+              ? '|'
+              : isFocused
+                ? ''
+                : placeholder
+          }
           onFocus={(e) => {
             setIsFocused(true);
             onFocus?.(e);
@@ -96,10 +109,10 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
             'w-full bg-transparent font-sans text-input font-medium h-[20.419px] leading-[normal] outline-none border-none p-0',
             isDark
               ? isActiveOrTyped
-                ? 'text-primary placeholder:text-primary'
+                ? 'text-primary placeholder:text-secondary-light'
                 : 'text-secondary-light placeholder:text-secondary-light'
               : isActiveOrTyped
-                ? 'text-secondary placeholder:text-secondary'
+                ? 'text-secondary placeholder:text-secondary-light'
                 : 'text-secondary-light placeholder:text-secondary-light',
             className
           )}
