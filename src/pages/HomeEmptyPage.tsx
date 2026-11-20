@@ -65,7 +65,7 @@ export const HomeEmptyPage: React.FC<HomeEmptyPageProps> = ({
 
   return (
     <main
-      className="bg-secondary flex flex-col gap-3 h-screen h-[100dvh] w-full overflow-hidden"
+      className="bg-secondary fixed inset-0 flex flex-col gap-3 w-full overflow-hidden"
       data-node-id={isCreateListModalOpen ? '93:8318' : '93:8303'}
       data-name={isCreateListModalOpen ? 'create list' : 'create List'}
     >

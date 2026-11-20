@@ -31,7 +31,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type={asChild ? undefined : (props.type ?? 'button')}
         className={cn(
-          'inline-flex items-center justify-center p-3 min-h-[44px] relative transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+          'box-border inline-flex items-center justify-center px-3 h-11 min-h-[44px] relative shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
           variant === 'primary' && [
             fullWidth ? 'flex-1 min-w-px' : 'w-[152px]',
             isForcedHover
@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ],
           variant === 'secondary' && [
             fullWidth ? 'flex-1 min-w-px' : 'w-[158px]',
-            'border-3 border-solid bg-transparent',
+            'border-3 border-solid bg-primary',
             isForcedHover
               ? 'border-accent-hover text-accent-hover'
               : 'border-accent hover:border-accent-hover text-accent hover:text-accent-hover',
@@ -51,8 +51,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span
           className={cn(
-            'font-sans text-button font-semibold leading-[normal] text-center',
-            variant === 'primary' ? 'w-[85px]' : 'whitespace-nowrap'
+            'font-sans text-button font-semibold leading-[normal] text-center whitespace-nowrap',
+            variant === 'primary' ? 'w-[85px]' : ''
           )}
         >
           {children}

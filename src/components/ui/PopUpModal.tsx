@@ -87,7 +87,7 @@ export const PopUpModal: React.FC<PopUpModalProps> = ({
       onSubmit={handleSubmit}
       onClick={(e) => e.stopPropagation()}
       className={cn(
-        'flex flex-col h-[205.839px] items-start relative w-[310px]',
+        'flex flex-col items-start relative w-[310px]',
         className
       )}
       data-node-id="94:8587"
